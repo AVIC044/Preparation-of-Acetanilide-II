@@ -1,0 +1,500 @@
+fileFormatVersion: 2
+guid: d20469b8cd35da84c996587b4ea4cc60
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aniline.sticker
+    second: {fileID: 2100000, guid: 5c293eeaf0d2ff844a89b3a44b92c161, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Buchner_funnel_M
+    second: {fileID: 2100000, guid: 859c31b30abca654fab2881e6ed85bbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bunsen Burner
+    second: {fileID: 2100000, guid: 7d8c0287d118cdb4e94846fb705c49d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cap_M
+    second: {fileID: 2100000, guid: 7d44b7738f57288409e6141129f9bc14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chemistry Table
+    second: {fileID: 2100000, guid: 24aeaab6bc4f9294ea2863bddef16db1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cork_M
+    second: {fileID: 2100000, guid: 0a7dfe03bcdb418498c4f35bb6ca965b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.001
+    second: {fileID: 2100000, guid: a72e7d9c4e143bc469136e5ef6e9b1f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.002
+    second: {fileID: 2100000, guid: 0ef6157509904d5428dda7101740da30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass2.001
+    second: {fileID: 2100000, guid: 80163e8d6f151a24ca53e84b4b5a479c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_2M
+    second: {fileID: 2100000, guid: 94cf773166a842a42a4ce8f7445a91cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_2M.001
+    second: {fileID: 2100000, guid: 5588307d06df6774fb0ee4b292d82f2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_M1
+    second: {fileID: 2100000, guid: e22598903114f4d4fbcb5cdbbdfcd5d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Liquid.001
+    second: {fileID: 2100000, guid: e900f54f12cc42f47b3ef8242d673246, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Liquid.003
+    second: {fileID: 2100000, guid: 9304b63a07a099a40a0adfae45469f39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Measurement.001
+    second: {fileID: 2100000, guid: 18a979debb1919848b5fd9417146f50f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Reading Text.001
+    second: {fileID: 2100000, guid: 6ad95d89186c4634881cdb64567ad130, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Reading Text.002
+    second: {fileID: 2100000, guid: bcf8a069d4e233d4daaa9ef182cd1145, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Reading Text.003
+    second: {fileID: 2100000, guid: 44201e227b4223448b8d576dc4d13313, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Settlings
+    second: {fileID: 2100000, guid: 91039f3b7c65d6840ae338a6954903be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sticker_Distilledwater
+    second: {fileID: 2100000, guid: e915f8b8da3013c48a2b46fae105be09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toward_Vaccum_M
+    second: {fileID: 2100000, guid: c05610361267ae64995b92f9ae1c46e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tripod_Stand
+    second: {fileID: 2100000, guid: 454baf43aaf14b04797f3f74d5b4cb74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Watch glass
+    second: {fileID: 2100000, guid: 8c88beb512b956247abb9906ea4768d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WireGauze
+    second: {fileID: 2100000, guid: 6585d05acaf042d42bbe9509a17db4b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acetyl chloride sticker
+    second: {fileID: 2100000, guid: 26804d13edc9ba94aae9027ad9c47476, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beaker Glass 250ML.001
+    second: {fileID: 2100000, guid: 3bfdfd82d6624bd4cb48d0b4901d91c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beaker glass
+    second: {fileID: 2100000, guid: df7282bfb56555f479f7f7b9ab5825a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: 38a900243627ec848b49dfaf0628c568, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: burret holder
+    second: {fileID: 2100000, guid: 7d4fe5c75288e5044b40f75400609bc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: burret holder.001
+    second: {fileID: 2100000, guid: aa2505ed3978bb948ba82f82eba468c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crystal 5.001
+    second: {fileID: 2100000, guid: 4db719bdbfd3409499dbed6f347a2ca6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crystal of salt
+    second: {fileID: 2100000, guid: d75818bccecd0424da87ef18d33a2008, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crystal of salt 1
+    second: {fileID: 2100000, guid: dd383ebd3fea1384b825350b87a840e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crystal of salt 1.002
+    second: {fileID: 2100000, guid: 43d9767b012356946944bd7be1e2cc95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crystal of salt.002
+    second: {fileID: 2100000, guid: ae46a698b666b834c889d156e0768fff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: distilled Liquid
+    second: {fileID: 2100000, guid: 4259f3cd320466845a228ef65ca08654, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: filter_Paper_.001
+    second: {fileID: 2100000, guid: 700d76842b5af8a458138f4c9c5b5204, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glacial acetic acid sticker
+    second: {fileID: 2100000, guid: 5cf7d52060e5e414f858961e108b20b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lab balance
+    second: {fileID: 2100000, guid: b3bf16f3d5e0cfe42bf75fb286c09c2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1.003
+    second: {fileID: 2100000, guid: 1741bcbcbbd00d74a904fa9a99dc6b5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: b7ede43e24fbf33409bbb3ddb63c5c83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: salt.001
+    second: {fileID: 2100000, guid: 4e28d2a425b71114ea38971bc1983714, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: salt.002
+    second: {fileID: 2100000, guid: 512126c634f35ea48bc487e48cdf0f25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: test tube  glass
+    second: {fileID: 2100000, guid: dc7f45625f0a9ea4591af8ace347117a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: test tube  glass2
+    second: {fileID: 2100000, guid: f5037b4d71b32394e88eac6435935713, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water 2
+    second: {fileID: 2100000, guid: 174570683f2e4544bb4bb9d8db32305a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water 4
+    second: {fileID: 2100000, guid: 99f18edd191fd2547a2ed91260727be0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water 4.001
+    second: {fileID: 2100000, guid: b2a9214b0e2a23742bdfb69073b80936, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water bottel top
+    second: {fileID: 2100000, guid: 701901569d722d345a3514122b98afeb, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BUNSEN~1
+    second: {fileID: 2800000, guid: 9f7e341cfffb09a43a4a1f2c734126f6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BUNSEN~2
+    second: {fileID: 2800000, guid: 89cae0faa51c67d46972397be652eefd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bunsen Burner_low_Bunsen Burner4K_Normal
+    second: {fileID: 2800000, guid: d225c0801e177bc47bb2a2e739960693, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Burette Holder_burret_AlbedoTransparency
+    second: {fileID: 2800000, guid: 2bb51592ad8d059409b7d13b21af424a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Chemistry Table_Chemistry Table_AlbedoTransparency
+    second: {fileID: 2800000, guid: 204042c7eb7d3394d8342f6a4aa803e4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Chemistry Table_Chemistry Table_MetallicSmoothness
+    second: {fileID: 2800000, guid: 3948455fdff5f6641897ffae9a32e844, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Chemistry Table_Chemistry Table_Normal
+    second: {fileID: 2800000, guid: cad2e3c6f32b1dc4a8bc0d754ee13109, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cork_Cork_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: 465b8b662c47d154c96fa1abf6beb989, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cork_Cork_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: 86b22d65272eee642a6abdf2f456e0e0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cork_Cork_M_Normal
+    second: {fileID: 2800000, guid: f0d0ced30d26023478e558f142e67482, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Distilled Water 2_water bottel top_MetallicSmoothness
+    second: {fileID: 2800000, guid: f08501d9a605d2c45823bd47b6350980, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Distilled Water 2_water bottel top_Normal
+    second: {fileID: 2800000, guid: f8716e47f7717cf40b7b5a44a5375e32, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DistilledWater
+    second: {fileID: 2800000, guid: 6ad97c431e8cb8d44b8db1c4cb7b38ff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Filter Paper Round_Filter_Paper_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: 6f07487c7cfc22e44b618fa5ce3599d3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Filter Paper Round_Filter_Paper_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: 07b4b78accd8e754da62d54e0f753720, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tripod Stand M_Tripod_Stand_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: 9717fedcf56e4ba43965cafb5a9f8c95, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tripod Stand M_Tripod_Stand_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: 53c6673851c235f449ae76880766da70, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tripod Stand M_Tripod_Stand_M_Normal
+    second: {fileID: 2800000, guid: 2d86be8eeed1aa1449ca29e40dada6c0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wiregauze_AlbedoTransparency
+    second: {fileID: 2800000, guid: a8a3189d6ccd6ca41881911e54ffee02, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bunchner_Settlings_MetallicSmoothness
+    second: {fileID: 2800000, guid: 60553366cb180b548b47224b402e57d7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: burret_DefaultMaterial_MetallicSmoothness
+    second: {fileID: 2800000, guid: d3125a324f66f0e4c820b392ef8f6240, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: burret_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 1fb5b2ecdaaeb394b9f522cf11374ef2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: magnetic stirrer_DefaultMaterial_AlbedoTransparency
+    second: {fileID: 2800000, guid: 9a06f36145c860e4d8f7cb117580b75b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: magnetic stirrer_DefaultMaterial_MetallicSmoothness
+    second: {fileID: 2800000, guid: 74a29819053580e4fa78b311ea982c52, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: new Bottle_Sticker_M_AlbedoTransparency
+    second: {fileID: 2800000, guid: bdf01d96f03e7c74293a7e2896da1b5c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: new Bottle_Sticker_M_MetallicSmoothness
+    second: {fileID: 2800000, guid: e78c5c788d1eb9f4584afbfc82f6cd53, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: test_glass_AlbedoTransparency
+    second: {fileID: 2800000, guid: 64d6ad7320933bb4a8772c0a1e9d5700, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: test_glass_MetallicSmoothness
+    second: {fileID: 2800000, guid: be40e5ae5778c7c48af2962993acdf85, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: test_glass_Normal
+    second: {fileID: 2800000, guid: 62947c3420594ef49b62e912c16d313f, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
