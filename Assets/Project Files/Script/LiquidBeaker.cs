@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LiquidBeaker : MonoBehaviour
 {
@@ -34,6 +35,10 @@ public class LiquidBeaker : MonoBehaviour
     public Transform liquidVisual;
     public Transform beakerBottomAnchor;
 
+    [Header("UI (optional)")]
+    [Tooltip("If assigned, this slider's range/value are kept in sync with currentVolume automatically.")]
+    public Slider volumeSlider;
+
     [Header("Wobble (spring-damper slosh, no shader needed)")]
     public float wobbleStiffness = 120f;
     public float wobbleDamping = 8f;
@@ -61,6 +66,20 @@ public class LiquidBeaker : MonoBehaviour
         lastPosition = transform.position;
         targetFillPct = currentFillPct = Mathf.Clamp01(currentVolume / maxVolume);
         ApplyFillVisual(currentFillPct);
+
+        if (volumeSlider != null)
+        {
+            volumeSlider.minValue = 0f;
+            volumeSlider.maxValue = maxVolume;
+            volumeSlider.SetValueWithoutNotify(currentVolume); // position the handle without firing the event
+            volumeSlider.onValueChanged.AddListener(OnSliderChanged);
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (volumeSlider != null)
+            volumeSlider.onValueChanged.RemoveListener(OnSliderChanged);
     }
 
     void Update()
@@ -79,6 +98,10 @@ public class LiquidBeaker : MonoBehaviour
     /// <summary>Set fill as a normalized 0–1 amount instead of raw mL.</summary>
     public void SetFillAmount(float normalized01) => SetVolume(Mathf.Clamp01(normalized01) * maxVolume);
 
+    // Wired to the Slider's OnValueChanged(float) event in Start() above.
+    // You can also drag this onto the Slider's event list in the Inspector instead.
+    public void OnSliderChanged(float value) => SetVolume(value);
+
     public void SetVolume(float newVolume)
     {
         float prevPct = targetFillPct;
@@ -88,6 +111,13 @@ public class LiquidBeaker : MonoBehaviour
         // Small bump impulse on volume change so it doesn't feel static/robotic
         float delta = targetFillPct - prevPct;
         AddWobbleImpulse(new Vector2(0f, delta * 40f));
+
+        // Keep the slider's handle in sync no matter what changed the volume
+        // (buttons, pouring, script). SetValueWithoutNotify is essential here —
+        // a plain volumeSlider.value = ... would re-fire onValueChanged ->
+        // OnSliderChanged -> SetVolume -> ... (infinite loop).
+        if (volumeSlider != null)
+            volumeSlider.SetValueWithoutNotify(currentVolume);
     }
 
     /// <summary>
