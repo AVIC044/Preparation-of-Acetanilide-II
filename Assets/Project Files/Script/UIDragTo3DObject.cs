@@ -26,9 +26,6 @@ public class UIDragTo3DObject : MonoBehaviour,
     [Tooltip("If false, only the parent object gets highlighted. If true, child objects are highlighted too.")]
     [SerializeField] private bool applyHighlightToChildren = false;
 
-    [Header("Return Settings")]
-    [SerializeField] private float returnSpeed = 8f;
-
     [Header("Audio Settings")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip correctSound;
