@@ -3,20 +3,33 @@ using System.Collections.Generic;
 
 public class SlideAnimationController : MonoBehaviour
 {
-    public Animator animator;
     [System.Serializable]
-    public class SlideAnimation
+    public class AnimationAction
     {
-        [Header("Slide")]
-        public int slideIndex;
+        [Tooltip("Drag the GameObject or Animator you want to animate here.")]
+        public Animator targetAnimator;
 
+        [Tooltip("The exact name of the animation state to play.")]
         public string animationName;
     }
 
-    [Header("Slide Animations")]
-    public SlideAnimation[] slideAnimations;
+    [System.Serializable]
+    public class SlideAnimation
+    {
+        [Header("Slide Settings")]
+        public int slideIndex;
 
-    // Stores slides whose animation has already played
+        [Header("Animations for this Slide")]
+        public List<AnimationAction> animationsToPlay;
+    }
+
+    [Header("Slide Configuration")]
+    public List<SlideAnimation> slideAnimations;
+
+    [Header("Shared Animator Controller")]
+    [Tooltip("The Animator Controller to assign to the target Animator.")]
+    public RuntimeAnimatorController globalAnimator;
+
     private HashSet<int> playedSlides = new HashSet<int>();
 
     private void OnEnable()
@@ -31,6 +44,7 @@ public class SlideAnimationController : MonoBehaviour
 
     private void OnSlideChanged(int currentSlideIndex)
     {
+        // Don't play the same slide animation more than once
         if (playedSlides.Contains(currentSlideIndex))
             return;
 
@@ -40,11 +54,7 @@ public class SlideAnimationController : MonoBehaviour
         {
             if (slideAnimation.slideIndex == currentSlideIndex)
             {
-                PlayAnimation(slideAnimation);
-
-                Debug.Log(
-                    $"Playing animation '{slideAnimation.animationName}' for slide {currentSlideIndex}."
-                );
+                PlayAnimations(slideAnimation);
 
                 foundAnimation = true;
             }
@@ -56,18 +66,46 @@ public class SlideAnimationController : MonoBehaviour
         }
     }
 
-    private void PlayAnimation(SlideAnimation slideAnimation)
+    private void PlayAnimations(SlideAnimation slideAnimation)
     {
-        if (animator == null)
-            return;
+        foreach (AnimationAction action in slideAnimation.animationsToPlay)
+        {
+            if (action.targetAnimator == null)
+            {
+                Debug.LogWarning(
+                    $"Missing Animator reference on slide {slideAnimation.slideIndex}!"
+                );
 
-        if (string.IsNullOrEmpty(slideAnimation.animationName))
-            return;
+                continue;
+            }
 
-        animator.Play(
-            slideAnimation.animationName,
-            0,
-            0f
-        );
+            if (string.IsNullOrEmpty(action.animationName))
+            {
+                Debug.LogWarning(
+                    $"Animation name is empty on slide {slideAnimation.slideIndex}!"
+                );
+
+                continue;
+            }
+
+            // Assign the controller ONLY if it is not already assigned
+            if (action.targetAnimator.runtimeAnimatorController != globalAnimator)
+            {
+                action.targetAnimator.runtimeAnimatorController = globalAnimator;
+            }
+
+            // Play the requested animation
+            action.targetAnimator.Play(
+                action.animationName,
+                0,
+                0f
+            );
+
+            Debug.Log(
+                $"Playing '{action.animationName}' on " +
+                $"GameObject '{action.targetAnimator.gameObject.name}' " +
+                $"for slide {slideAnimation.slideIndex}."
+            );
+        }
     }
 }
