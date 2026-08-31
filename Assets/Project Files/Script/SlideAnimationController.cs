@@ -11,6 +11,9 @@ public class SlideAnimationController : MonoBehaviour
 
         [Tooltip("The exact name of the animation state to play.")]
         public string animationName;
+
+        [HideInInspector]
+        public bool hasPlayed = false;
     }
 
     [System.Serializable]
@@ -18,6 +21,9 @@ public class SlideAnimationController : MonoBehaviour
     {
         [Header("Slide Settings")]
         public int slideIndex;
+
+        [Tooltip("If enabled, animations will NOT play automatically. Call PlayCurrentSlideAnimations() to play them.")]
+        public bool requireFunctionCall;
 
         [Header("Animations for this Slide")]
         public List<AnimationAction> animationsToPlay;
@@ -30,7 +36,7 @@ public class SlideAnimationController : MonoBehaviour
     [Tooltip("The Animator Controller to assign to the target Animator.")]
     public RuntimeAnimatorController globalAnimator;
 
-    private HashSet<int> playedSlides = new HashSet<int>();
+    private int currentSlideIndex = -1;
 
     private void OnEnable()
     {
@@ -42,29 +48,60 @@ public class SlideAnimationController : MonoBehaviour
         SlideController.OnSlideChanged -= OnSlideChanged;
     }
 
-    private void OnSlideChanged(int currentSlideIndex)
+    private void OnSlideChanged(int slideIndex)
     {
-        // Don't play the same slide animation more than once
-        if (playedSlides.Contains(currentSlideIndex))
-            return;
-
-        bool foundAnimation = false;
+        currentSlideIndex = slideIndex;
 
         foreach (SlideAnimation slideAnimation in slideAnimations)
         {
-            if (slideAnimation.slideIndex == currentSlideIndex)
+            if (slideAnimation.slideIndex != currentSlideIndex)
+                continue;
+
+            // If checkbox is enabled,
+            // DON'T play automatically.
+            if (slideAnimation.requireFunctionCall)
             {
-                PlayAnimations(slideAnimation);
+                Debug.Log(
+                    $"Slide {slideIndex} requires a function call before animations play."
+                );
 
-                foundAnimation = true;
+                continue;
             }
-        }
 
-        if (foundAnimation)
-        {
-            playedSlides.Add(currentSlideIndex);
+            // Normal automatic animation
+            PlayAnimations(slideAnimation);
         }
     }
+
+    // =========================================================
+    // PUBLIC FUNCTION
+    // Call this function from another script / UnityEvent
+    // =========================================================
+
+    public void PlayCurrentSlideAnimations()
+    {
+        foreach (SlideAnimation slideAnimation in slideAnimations)
+        {
+            if (slideAnimation.slideIndex != currentSlideIndex)
+                continue;
+
+            PlayAnimations(slideAnimation);
+
+            Debug.Log(
+                $"Function called. Playing animations for slide {currentSlideIndex}."
+            );
+
+            return;
+        }
+
+        Debug.LogWarning(
+            $"No animation configuration found for slide {currentSlideIndex}."
+        );
+    }
+
+    // =========================================================
+    // PLAY ANIMATIONS
+    // =========================================================
 
     private void PlayAnimations(SlideAnimation slideAnimation)
     {
@@ -88,24 +125,61 @@ public class SlideAnimationController : MonoBehaviour
                 continue;
             }
 
-            // Assign the controller ONLY if it is not already assigned
-            if (action.targetAnimator.runtimeAnimatorController != globalAnimator)
+            // Don't play the same animation twice
+            if (action.hasPlayed)
+                continue;
+
+            // Assign shared Animator Controller
+            if (globalAnimator != null)
             {
-                action.targetAnimator.runtimeAnimatorController = globalAnimator;
+                if (action.targetAnimator.runtimeAnimatorController
+                    != globalAnimator)
+                {
+                    action.targetAnimator.runtimeAnimatorController =
+                        globalAnimator;
+                }
             }
 
-            // Play the requested animation
+            // Play animation
             action.targetAnimator.Play(
                 action.animationName,
                 0,
                 0f
             );
 
+            action.hasPlayed = true;
+
             Debug.Log(
                 $"Playing '{action.animationName}' on " +
-                $"GameObject '{action.targetAnimator.gameObject.name}' " +
+                $"'{action.targetAnimator.gameObject.name}' " +
                 $"for slide {slideAnimation.slideIndex}."
             );
         }
+    }
+
+    // =========================================================
+    // OPTIONAL FUNCTION
+    // Play animations for a specific slide manually
+    // =========================================================
+
+    public void PlaySlideAnimations(int slideIndex)
+    {
+        foreach (SlideAnimation slideAnimation in slideAnimations)
+        {
+            if (slideAnimation.slideIndex == slideIndex)
+            {
+                PlayAnimations(slideAnimation);
+
+                Debug.Log(
+                    $"Manually playing animations for slide {slideIndex}."
+                );
+
+                return;
+            }
+        }
+
+        Debug.LogWarning(
+            $"No animation configuration found for slide {slideIndex}."
+        );
     }
 }
