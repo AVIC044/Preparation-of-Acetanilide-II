@@ -418,6 +418,8 @@ Transform:
   - {fileID: 1288195565}
   - {fileID: 1352723075}
   - {fileID: 1575587531}
+  - {fileID: 1255992326}
+  - {fileID: 1832510390}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &25597363
@@ -3637,7 +3639,7 @@ RectTransform:
   m_Father: {fileID: 528738543}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3661,8 +3663,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a541b7d95e614ef40a3c9f0c1211ad10, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11576,7 +11578,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5037b4d71b32394e88eac6435935713, type: 2}
+  - {fileID: 2100000, guid: a844d13e0193e38468dc99912e2638b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11909,8 +11911,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a541b7d95e614ef40a3c9f0c1211ad10, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -13745,7 +13747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &904571223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15667,19 +15669,7 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1458442084}
-        m_TargetAssemblyTypeName: LiquidBeaker, Assembly-CSharp
-        m_MethodName: OnSliderChanged
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 2
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1068974236
 GameObject:
   m_ObjectHideFlags: 0
@@ -16126,7 +16116,7 @@ GameObject:
   - component: {fileID: 1123229851}
   - component: {fileID: 1123229850}
   m_Layer: 0
-  m_Name: pSphere1.001
+  m_Name: ' fill round'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17786,6 +17776,148 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249683215}
   m_CullTransparentMesh: 1
+--- !u!1 &1255992325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1255992326}
+  - component: {fileID: 1255992327}
+  - component: {fileID: 1255992329}
+  - component: {fileID: 1255992328}
+  m_Layer: 0
+  m_Name: Liqused fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1255992326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255992325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 25597362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1255992327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255992325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f1b1bde72b9a8479d8027a04fbbefd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IsolatedLiquidController
+  targetRenderer: {fileID: 1972142912}
+  fillPropertyName: _fill
+  liquidSlider: {fileID: 1066747082}
+  maxCapacityML: 10
+  drainDuration: 1.5
+  requiredML: 3
+  onTargetReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1066747080}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onReductionComplete:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1255992328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255992325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f1b1bde72b9a8479d8027a04fbbefd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IsolatedLiquidController
+  targetRenderer: {fileID: 1854469232}
+  fillPropertyName: _fill
+  liquidSlider: {fileID: 1748182607}
+  maxCapacityML: 10
+  drainDuration: 1.5
+  requiredML: 3
+  onTargetReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1748182605}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onReductionComplete:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1255992329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255992325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f1b1bde72b9a8479d8027a04fbbefd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IsolatedLiquidController
+  targetRenderer: {fileID: 776064037}
+  fillPropertyName: _fill
+  liquidSlider: {fileID: 1275121076}
+  maxCapacityML: 10
+  drainDuration: 1.5
+  requiredML: 3
+  onTargetReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1275121074}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onReductionComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1256778537
 GameObject:
   m_ObjectHideFlags: 0
@@ -19250,7 +19382,7 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: '             Select'
+    - m_Text: nitration
       m_Image: {fileID: 21300000, guid: 771b66d5725c089459a09915c4fd815e, type: 3}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: bromination
@@ -19260,9 +19392,6 @@ MonoBehaviour:
       m_Image: {fileID: 21300000, guid: 771b66d5725c089459a09915c4fd815e, type: 3}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: acetylation
-      m_Image: {fileID: 21300000, guid: 771b66d5725c089459a09915c4fd815e, type: 3}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: nitration
       m_Image: {fileID: 21300000, guid: 771b66d5725c089459a09915c4fd815e, type: 3}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
@@ -19803,8 +19932,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1458442080}
-  - component: {fileID: 1458442084}
   - component: {fileID: 1458442085}
+  - component: {fileID: 1458442086}
   m_Layer: 0
   m_Name: Measuring cylinder main
   m_TagString: Untagged
@@ -19829,30 +19958,6 @@ Transform:
   - {fileID: 202096315}
   m_Father: {fileID: 881301319}
   m_LocalEulerAnglesHint: {x: -89.98021, y: 0, z: 0}
---- !u!114 &1458442084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458442079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0c7dfcc782b36a4491f434b1248be6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LiquidBeaker
-  maxVolume: 250
-  currentVolume: 100
-  maxFillHeight: 1
-  fillLerpSpeed: 4
-  liquidVisual: {fileID: 1972142911}
-  beakerBottomAnchor: {fileID: 202096315}
-  volumeSlider: {fileID: 1066747082}
-  wobbleStiffness: 120
-  wobbleDamping: 8
-  wobbleAmplitudeScale: 1
-  maxWobbleAngle: 12
-  pourRatePerSecond: 60
 --- !u!95 &1458442085
 Animator:
   serializedVersion: 7
@@ -19875,6 +19980,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1458442086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458442079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9d72b36751d034f8a7512eb04854ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiquidFillController
+  increaseRenderer: {fileID: 1123229850}
+  increaseMaterial: {fileID: 2100000, guid: 94cf773166a842a42a4ce8f7445a91cf, type: 2}
+  increaseFlowObject: {fileID: 0}
+  targetIncreaseFillHeight: 0.15
+  increaseDuration: 1
+  decreaseRenderer: {fileID: 1972142912}
+  decreaseMaterial: {fileID: 2100000, guid: be84fac5bda8f1c47985c5fd9b688802, type: 2}
+  decreaseFlowObject: {fileID: 0}
+  targetDecreaseFillHeight: 0
+  decreaseDuration: 1
+  onIncreaseCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  onDecreaseCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1459356086
 GameObject:
   m_ObjectHideFlags: 0
@@ -19910,9 +20043,9 @@ RectTransform:
   m_Father: {fileID: 799604765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1459356088
 MonoBehaviour:
@@ -19934,8 +20067,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a541b7d95e614ef40a3c9f0c1211ad10, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -22356,7 +22489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '             Select'
+  m_text: nitration
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -24198,7 +24331,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 771b66d5725c089459a09915c4fd815e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24273,7 +24406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 5614cb76ca334ef4595da637424f79bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24291,6 +24424,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826022958}
   m_CullTransparentMesh: 1
+--- !u!1 &1832510389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832510390}
+  - component: {fileID: 1832510391}
+  m_Layer: 0
+  m_Name: PourManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1832510390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832510389}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03271, y: 1.11611, z: -1.51672}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 25597362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1832510391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832510389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9392fe59e0edd8439d19a4f1f5e27b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PourManager
+  bottle: {fileID: 0}
+  pourPoint: {fileID: 0}
+  bottleAnimator: {fileID: 0}
+  pourTrigger: Pour
+  bottleLiquid: {fileID: 0}
+  cupLiquid: {fileID: 0}
+  bottleTargetML: 0
+  cupTargetML: 3
+  pourDuration: 3
+  moveSpeed: 2
 --- !u!1 &1834938499
 GameObject:
   m_ObjectHideFlags: 0
@@ -24796,7 +24983,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5037b4d71b32394e88eac6435935713, type: 2}
+  - {fileID: 2100000, guid: 40eb3992963475a4a804ac5ebade0ee0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24838,6 +25025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1862302219}
   - component: {fileID: 1862302220}
+  - component: {fileID: 1862302221}
   m_Layer: 0
   m_Name: Measuring cylinder main.002
   m_TagString: Untagged
@@ -24883,6 +25071,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1862302221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862302218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9d72b36751d034f8a7512eb04854ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiquidFillController
+  increaseRenderer: {fileID: 1123229850}
+  increaseMaterial: {fileID: 2100000, guid: 94cf773166a842a42a4ce8f7445a91cf, type: 2}
+  increaseFlowObject: {fileID: 0}
+  targetIncreaseFillHeight: 0.2
+  increaseDuration: 2
+  decreaseRenderer: {fileID: 1854469232}
+  decreaseMaterial: {fileID: 2100000, guid: 40eb3992963475a4a804ac5ebade0ee0, type: 2}
+  decreaseFlowObject: {fileID: 0}
+  targetDecreaseFillHeight: 0
+  decreaseDuration: 2
+  onIncreaseCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  onDecreaseCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1867773324
 GameObject:
   m_ObjectHideFlags: 0
@@ -25983,7 +26199,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5037b4d71b32394e88eac6435935713, type: 2}
+  - {fileID: 2100000, guid: be84fac5bda8f1c47985c5fd9b688802, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
