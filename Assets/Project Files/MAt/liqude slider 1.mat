@@ -139,8 +139,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _fersnal: {r: 0.99215686, g: 0.48344195, b: 0, a: 0.8862745}
+    - _fersnal: {r: 1, g: 0.37254903, b: 0, a: 0.8862745}
     - _liqude_colur: {r: 1, g: 0.37115335, b: 0, a: 0.50980395}
-    - _surfacecouler: {r: 1, g: 0.47843266, b: 0, a: 0.7254902}
+    - _surfacecouler: {r: 1, g: 0.37254903, b: 0, a: 0.7254902}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

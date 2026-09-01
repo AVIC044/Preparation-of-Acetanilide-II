@@ -5931,8 +5931,8 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 12.583333
-    functionName: Triggerfun
+  - time: 8.708333
+    functionName: PlayIncrease
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

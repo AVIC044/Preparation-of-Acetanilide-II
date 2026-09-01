@@ -1,8 +1,31 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
 
 public class SlideAnimationController : MonoBehaviour
 {
+    // =========================================================
+    // ANIMATION FRAME EVENT
+    // =========================================================
+
+    [System.Serializable]
+    public class AnimationFrameEvent
+    {
+        [Tooltip("Frame number where the event should be triggered.")]
+        public int frame = 55;
+
+        [Tooltip("Event that will be invoked when the animation reaches this frame.")]
+        public UnityEvent onFrameReached;
+
+        [HideInInspector]
+        public bool hasTriggered = false;
+    }
+
+    // =========================================================
+    // ANIMATION ACTION
+    // =========================================================
+
     [System.Serializable]
     public class AnimationAction
     {
@@ -12,9 +35,20 @@ public class SlideAnimationController : MonoBehaviour
         [Tooltip("The exact name of the animation state to play.")]
         public string animationName;
 
+        [Header("Frame Events")]
+        [Tooltip("Add events that should happen at specific frames.")]
+        public List<AnimationFrameEvent> frameEvents;
+
         [HideInInspector]
         public bool hasPlayed = false;
+
+        [HideInInspector]
+        public float animationStartTime = -1f;
     }
+
+    // =========================================================
+    // SLIDE ANIMATION
+    // =========================================================
 
     [System.Serializable]
     public class SlideAnimation
@@ -22,12 +56,19 @@ public class SlideAnimationController : MonoBehaviour
         [Header("Slide Settings")]
         public int slideIndex;
 
-        [Tooltip("If enabled, animations will NOT play automatically. Call PlayCurrentSlideAnimations() to play them.")]
+        [Tooltip(
+            "If enabled, animations will NOT play automatically. " +
+            "Call PlayCurrentSlideAnimations() to play them."
+        )]
         public bool requireFunctionCall;
 
         [Header("Animations for this Slide")]
         public List<AnimationAction> animationsToPlay;
     }
+
+    // =========================================================
+    // INSPECTOR SETTINGS
+    // =========================================================
 
     [Header("Slide Configuration")]
     public List<SlideAnimation> slideAnimations;
@@ -36,7 +77,15 @@ public class SlideAnimationController : MonoBehaviour
     [Tooltip("The Animator Controller to assign to the target Animator.")]
     public RuntimeAnimatorController globalAnimator;
 
+    // =========================================================
+    // INTERNAL VARIABLES
+    // =========================================================
+
     private int currentSlideIndex = -1;
+
+    // =========================================================
+    // ENABLE / DISABLE
+    // =========================================================
 
     private void OnEnable()
     {
@@ -47,6 +96,20 @@ public class SlideAnimationController : MonoBehaviour
     {
         SlideController.OnSlideChanged -= OnSlideChanged;
     }
+
+    // =========================================================
+    // UPDATE
+    // Checks animation frame events
+    // =========================================================
+
+    private void Update()
+    {
+        CheckAnimationFrameEvents();
+    }
+
+    // =========================================================
+    // SLIDE CHANGED
+    // =========================================================
 
     private void OnSlideChanged(int slideIndex)
     {
@@ -140,6 +203,12 @@ public class SlideAnimationController : MonoBehaviour
                 }
             }
 
+            // Reset frame events
+            ResetFrameEvents(action);
+
+            // Store animation start time
+            action.animationStartTime = Time.time;
+
             // Play animation
             action.targetAnimator.Play(
                 action.animationName,
@@ -155,6 +224,153 @@ public class SlideAnimationController : MonoBehaviour
                 $"for slide {slideAnimation.slideIndex}."
             );
         }
+    }
+
+    // =========================================================
+    // CHECK FRAME EVENTS
+    // =========================================================
+
+    private void CheckAnimationFrameEvents()
+    {
+        if (slideAnimations == null)
+            return;
+
+        foreach (SlideAnimation slideAnimation in slideAnimations)
+        {
+            if (slideAnimation.slideIndex != currentSlideIndex)
+                continue;
+
+            if (slideAnimation.animationsToPlay == null)
+                continue;
+
+            foreach (AnimationAction action in slideAnimation.animationsToPlay)
+            {
+                if (!action.hasPlayed)
+                    continue;
+
+                if (action.targetAnimator == null)
+                    continue;
+
+                if (action.frameEvents == null ||
+                    action.frameEvents.Count == 0)
+                    continue;
+
+                AnimatorStateInfo stateInfo =
+                    action.targetAnimator.GetCurrentAnimatorStateInfo(0);
+
+                // Make sure the requested animation is currently playing
+                if (!stateInfo.IsName(action.animationName))
+                    continue;
+
+                // Get animation clip length
+                AnimationClip clip = FindAnimationClip(
+                    action.targetAnimator,
+                    action.animationName
+                );
+
+                if (clip == null)
+                    continue;
+
+                // Current normalized time
+                float normalizedTime = stateInfo.normalizedTime % 1f;
+
+                // Convert normalized time to seconds
+                float currentTime =
+                    normalizedTime * clip.length;
+
+                // Convert seconds to frame
+                float currentFrame =
+                    currentTime * clip.frameRate;
+
+                // Check every frame event
+                foreach (AnimationFrameEvent frameEvent in action.frameEvents)
+                {
+                    if (frameEvent == null)
+                        continue;
+
+                    if (frameEvent.hasTriggered)
+                        continue;
+
+                    // Check if animation reached requested frame
+                    if (currentFrame >= frameEvent.frame)
+                    {
+                        TriggerFrameEvent(
+                            action,
+                            frameEvent
+                        );
+                    }
+                }
+            }
+        }
+    }
+
+    // =========================================================
+    // TRIGGER FRAME EVENT
+    // =========================================================
+
+    private void TriggerFrameEvent(
+        AnimationAction action,
+        AnimationFrameEvent frameEvent)
+    {
+        frameEvent.hasTriggered = true;
+
+        Debug.Log(
+            $"Animation '{action.animationName}' reached frame " +
+            $"{frameEvent.frame}."
+        );
+
+        frameEvent.onFrameReached?.Invoke();
+    }
+
+    // =========================================================
+    // RESET FRAME EVENTS
+    // =========================================================
+
+    private void ResetFrameEvents(AnimationAction action)
+    {
+        if (action.frameEvents == null)
+            return;
+
+        foreach (AnimationFrameEvent frameEvent in action.frameEvents)
+        {
+            if (frameEvent != null)
+            {
+                frameEvent.hasTriggered = false;
+            }
+        }
+    }
+
+    // =========================================================
+    // FIND ANIMATION CLIP
+    // =========================================================
+
+    private AnimationClip FindAnimationClip(
+        Animator animator,
+        string animationName)
+    {
+        if (animator == null)
+            return null;
+
+        RuntimeAnimatorController controller =
+            animator.runtimeAnimatorController;
+
+        if (controller == null)
+            return null;
+
+        AnimationClip[] clips = controller.animationClips;
+
+        foreach (AnimationClip clip in clips)
+        {
+            if (clip == null)
+                continue;
+
+            if (clip.name == animationName)
+            {
+                return clip;
+            }
+        }
+
+        return null;
     }
 
     // =========================================================
@@ -182,4 +398,53 @@ public class SlideAnimationController : MonoBehaviour
             $"No animation configuration found for slide {slideIndex}."
         );
     }
+
+    // =========================================================
+    // OPTIONAL PUBLIC FUNCTION
+    // MANUALLY TRIGGER A SPECIFIC FRAME EVENT
+    // =========================================================
+
+    public void TriggerAnimationFrameEvent(
+        int slideIndex,
+        int animationIndex,
+        int frameIndex)
+    {
+        if (slideAnimations == null)
+            return;
+
+        foreach (SlideAnimation slideAnimation in slideAnimations)
+        {
+            if (slideAnimation.slideIndex != slideIndex)
+                continue;
+
+            if (slideAnimation.animationsToPlay == null)
+                return;
+
+            if (animationIndex < 0 ||
+                animationIndex >= slideAnimation.animationsToPlay.Count)
+                return;
+
+            AnimationAction action =
+                slideAnimation.animationsToPlay[animationIndex];
+
+            if (action.frameEvents == null)
+                return;
+
+            foreach (AnimationFrameEvent frameEvent in action.frameEvents)
+            {
+                if (frameEvent.frame == frameIndex)
+                {
+                    frameEvent.onFrameReached?.Invoke();
+
+                    Debug.Log(
+                        $"Manually triggered frame {frameIndex} " +
+                        $"event for animation '{action.animationName}'."
+                    );
+
+                    return;
+                }
+            }
+        }
+    }
 }
+
