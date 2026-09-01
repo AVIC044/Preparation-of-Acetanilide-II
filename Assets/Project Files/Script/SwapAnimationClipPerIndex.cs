@@ -144,7 +144,12 @@ public class SwapAnimationClipPerIndex : MonoBehaviour
         if (restartAnimatorOnSwap)
         {
             AnimatorStateInfo stateInfo = config.targetAnimator.GetCurrentAnimatorStateInfo(0);
+
+            // 1. Play from frame 0
             config.targetAnimator.Play(stateInfo.fullPathHash, 0, 0f);
+
+            // 2. ADD THIS LINE: Forces Unity to instantly recognize the new clip's length
+            config.targetAnimator.Update(0f);
         }
     }
 
