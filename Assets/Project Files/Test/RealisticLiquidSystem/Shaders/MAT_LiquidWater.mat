@@ -85,7 +85,7 @@ Material:
     m_Floats:
     - _Absorption: 1.63
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 0.524
+    - _Alpha: 0.5
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -148,7 +148,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RefractionStrength: 1
-    - _SecondaryWave: 0
+    - _SecondaryWave: 0.06
     - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -162,7 +162,7 @@ Material:
     - _Thickness: 1.393
     - _Viscosity: 0.187
     - _WaterFresnelMultiplier: 0.18
-    - _WaterOpacity: 0.193
+    - _WaterOpacity: 0.75
     - _WaterSpecularMultiplier: 0.3
     - _WaterWaveMultiplier: 0.12
     - _WaterWobbleMultiplier: 0.04
@@ -174,7 +174,7 @@ Material:
     - _WaveScale: 3
     - _WaveSpeed: 5
     - _WaveStrength: 0
-    - _WobbleAmount: 0
+    - _WobbleAmount: 0.1
     - _WobbleFrequency: 6.92
     - _WobbleSpeed: 5.45
     - _WobbleStrength: 0.03
@@ -182,15 +182,15 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.6862745, b: 1, a: 0.8}
+    - _BaseColor: {r: 0.6528301, g: 0.2658044, b: 0.10223561, a: 0.8}
     - _ChemicalDotColor: {r: 0.19999996, g: 1, b: 0.39999998, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DeepColor: {r: 0, g: 0.70980394, b: 1, a: 1}
+    - _DeepColor: {r: 0.4339623, g: 0.22361338, b: 0.13346384, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlowDirection: {r: 0, g: 0.77, b: 0, a: 0}
     - _OilColor: {r: 0.31999996, g: 0.15999997, b: 0.025, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SurfaceColor: {r: 0, g: 0.7093437, b: 1, a: 1}
+    - _SurfaceColor: {r: 0.6150943, g: 0.2714539, b: 0.1241794, a: 1}
     - _WaveDirection: {r: 0, g: 0, b: 0.95, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
