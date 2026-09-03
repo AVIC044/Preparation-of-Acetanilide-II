@@ -12,16 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01fd2d64a9249049aaa77d5c12a82fe, type: 3}
   m_Name: Question1
   m_EditorClassIdentifier: 
-  questionText: '1. The angle between the reflected ray and the
-
-    normal at the
-    point of incidence is called______'
+  questionText: 1. What is the IUPAC name of acetanilide?
   referenceImage: {fileID: 0}
-  explanationText: The angle between the normal and the reflected ray is known as
-    the angle of reflection.
+  explanationText: 'Acetanilide is formed by replacing one of the hydrogen atoms
+    in the -NH2 group of aniline with the -
+
+    COCH3 group. It is represented by
+    the formula C&H5-NH-CO-CH3.
+
+    Hence, it is an amide of 2 carbon atoms, but
+    one of the substituents on the nitrogen is the phenyl (-
+
+    C&H5) group. So,
+    its IUPAC name is N-phenylethanamide.'
   options:
-  - The glance angle
-  - 'The angle of reflection '
-  - The angle of incidence
-  - The angle of emergence
-  correctOptionIndex: 1
+  - N-ethylbenzamide
+  - Phenylamine
+  - N-phenylethenamide
+  - N-ethylaniline
+  correctOptionIndex: 2

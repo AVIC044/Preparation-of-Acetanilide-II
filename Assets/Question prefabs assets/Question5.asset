@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01fd2d64a9249049aaa77d5c12a82fe, type: 3}
+  m_Name: Question5
+  m_EditorClassIdentifier: Assembly-CSharp::MCQQuestionData
+  questionText: 8. What is the correct sequence to obtain 4-bromoaniline from aniline?
+  referenceImage: {fileID: 0}
+  explanationText: 'Aniline reacts with bromine water at room temperature to give
+    a white precipitate of 2,4,6-
+
+    tribromoaniline. This is due to the very high
+    reactivity of aromatic amines towards electrophilic
+
+    substitution reactions.
+
+    To
+    prepare 4-bromoaniline, we need to protect the -NH2 group by acetylation using
+    acetic anhydride,
+
+    then carry out the bromination followed by hydrolysis
+    of the substituted amide.'
+  options:
+  - Bromination using Br2/H2O
+  - Acetylation -> Bromination
+  - Acetylation - Bromination -> Hydrolysis
+  - Hydrolysis -> Acetylation -> Bromination
+  correctOptionIndex: 2
