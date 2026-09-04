@@ -67,7 +67,7 @@ public class ScreenToWorldSnapManager : MonoBehaviour
 
         if (canvas == null)
         {
-            canvas = FindObjectOfType<Canvas>();
+            canvas = FindFirstObjectByType<Canvas>();
         }
 
         SetupAll();

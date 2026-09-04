@@ -75,7 +75,6 @@ public class SlideController : MonoBehaviour
 
         if (currentPage < pages.Count && !nextClickTriggeredPages.Contains(currentPage))
         {
-            pages[currentPage]?.onNextClick?.Invoke();
             nextClickTriggeredPages.Add(currentPage);
         }
 
